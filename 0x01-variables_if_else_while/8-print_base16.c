@@ -10,7 +10,7 @@ int main(void)
 	char hexal = 'a';
 	char hexan = '0';
 
-	while (hexan <= '9';)
+	while (hexan <= '9')
 	{
 		putchar(hexan);
 		hexan++;
