@@ -20,7 +20,7 @@ int main(void)
 				putchar(nu + '0');
 				putchar(nu1 + '0');
 				putchar(nu2 + '0');
-				if (nu + nu1 + nu2 != 789)
+				if (nu2 != 9)
 				{
 					putchar(',');
 					putchar(' ');
