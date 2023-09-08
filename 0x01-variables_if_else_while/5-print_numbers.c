@@ -14,5 +14,6 @@ int main(void)
 		printf("%i", nu);
 		nu++;
 	}
+	printf("\n");
 	return (0);
 }
