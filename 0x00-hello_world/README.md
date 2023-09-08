@@ -1,4 +1,4 @@
-# 0x00. C - Hello, World
+# C - Hello, World
 
 This repository contains C programs and scripts for various tasks related to the C programming language. Each task focuses on different aspects of C programming and serves as a learning exercise.
 
