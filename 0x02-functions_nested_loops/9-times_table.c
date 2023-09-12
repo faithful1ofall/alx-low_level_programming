@@ -5,12 +5,16 @@
  */
 void times_table(void)
 {
-	int i = 0, j = 0, k = 0;
+	int i, j, k;
+
+	i = 0;
 
 	while (i < 10)
 	{
+		j = 0;
 		while (j < 10)
 		{
+
 			k = j * i;
 			if (j == 0)
 			{
