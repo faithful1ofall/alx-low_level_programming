@@ -8,47 +8,24 @@
  */
 int main(void)
 {
-	int count = 0;
-	unsigned long fib1 = 0, fib2 = 1, sum;
-	unsigned long fib1_half1, fib1_half2, fib2_half1, fib2_half2;
-	unsigned long half1, half2;
+	int count, i = 0;
+	unsigned long fib[100];
+	fib[0] = 1;
+	fib[1] = 2;
+	count = 2;
 
-	while (count < 92)
+	while (count < 98)
 	{
-		sum = fib1 + fib2;
-		printf("%lu, ", sum);
-
-		fib1 = fib2;
-		fib2 = sum;
+		fib[count] = fib[count - 1] + fib[count - 2];
 		count++;
 	}
-
-	fib1_half1 = fib1 / 10000000000;
-	fib2_half1 = fib2 / 10000000000;
-	fib1_half2 = fib1 % 10000000000;
-	fib2_half2 = fib2 % 10000000000;
-	count = 93;
-
-	while (count < 99)
+	while (i < 98)
 	{
-		half1 = fib1_half1 + fib2_half1;
-		half2 = fib1_half2 + fib2_half2;
-		if (fib1_half2 + fib2_half2 > 9999999999)
-		{
-			half1 += 1;
-			half2 %= 10000000000;
-		}
-
-		printf("%lu%lu", half1, half2);
-		if (count != 98)
+		printf("%lu", fib[i]);
+		if (i < 97)
 			printf(", ");
-
-		fib1_half1 = fib2_half1;
-		fib1_half2 = fib2_half2;
-		fib2_half1 = half1;
-		fib2_half2 = half2;
-		count++;
-	}
-	printf("\n");
-	return (0);
+		i++;
+    }
+    printf("\n");
+    return (0);
 }
