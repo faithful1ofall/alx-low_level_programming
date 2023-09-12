@@ -9,7 +9,7 @@ int main(void)
 	int count = 0;
 	unsigned long fib1 = 0, fib2 = 1, sum, half1, half2, fib1_half1, fib1_half2;
 	unsigned long fib2_half1, fib2_half2;
-	
+
 	while (count < 92)
 	{
 		sum = fib1 + fib2;
