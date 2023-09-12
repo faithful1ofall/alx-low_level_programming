@@ -8,12 +8,13 @@
  */
 int main(void)
 {
+    int i = 2;
     unsigned long fib1 = 1;
     unsigned long fib2 = 2;
 
     printf("%lu, %lu", fib1, fib2);
 
-    for (int i = 2; i < 98; i++)
+    while (i < 98)
     {
         unsigned long fib_next = fib1 + fib2;
 
@@ -21,6 +22,7 @@ int main(void)
 
         fib1 = fib2;
         fib2 = fib_next;
+        i++;
     }
 
     printf("\n");
