@@ -7,7 +7,7 @@
  */
 void print_times_table(int n)
 {
-	int num = 0, mul = 1, pro;
+	int num = 0, mul, pro;
 
 	if (n >= 0 && n <= 15)
 	{
@@ -15,6 +15,7 @@ void print_times_table(int n)
 		while (num <= n)
 		{
 			_putchar('0');
+			mul = 1;
 
 			while (mul <= n)
 			{
