@@ -2,45 +2,43 @@
 
 /**
  * print_times_table - Prints the times table of the input,
- *                     starting with 0.
- * @n: The value of the times table to be printed.
+ *                     starting with 0 and going.
+ * @n: The value of the times table to be printed currently.
  */
 void print_times_table(int n)
 {
-	int num, mul, prod;
+	int num = 0, mul = 1, pro;
 
 	if (n >= 0 && n <= 15)
 	{
-		int num = 0;
 		
 		while (num <= n)
 		{
 			_putchar('0');
-			int mul = 1;
 
 			while (mul <= n)
 			{
 				_putchar(',');
 				_putchar(' ');
 
-				prod = num * mult;
+				pro = num * mul;
 
-				if (prod <= 99)
+				if (pro <= 99)
 					_putchar(' ');
-				if (prod <= 9)
+				if (pro <= 9)
 					_putchar(' ');
 
-				if (prod >= 100)
+				if (pro >= 100)
 				{
-					_putchar((prod / 100) + '0');
-					_putchar(((prod / 10)) % 10 + '0');
+					_putchar((pro / 100) + '0');
+					_putchar(((pro / 10)) % 10 + '0');
 				}
-				else if (prod <= 99 && prod >= 10)
+				else if (pro <= 99 && prod >= 10)
 				{
-					_putchar((prod / 10) + '0');
+					_putchar((pro / 10) + '0');
 				}
 				mul++;
-				_putchar((prod % 10) + '0');
+				_putchar((pro % 10) + '0');
 			}
 			num++;
 			_putchar('\n');
