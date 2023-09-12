@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * main -  prints _putchar, followed by a new line
- * Return: Always 0 (Success)
+ * main -  prints using _putchar that has been defined
+ * Return:  0 means the program is successful
  */
 int main(void)
 {
