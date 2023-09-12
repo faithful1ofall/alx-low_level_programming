@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main -  prints using _putchar that has been defined
+ * main -  prints _putchar followed by a new line
  * Return:  0 means the program is successful
  */
 int main(void)
