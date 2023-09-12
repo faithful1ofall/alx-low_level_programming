@@ -7,63 +7,31 @@
  */
 void print_to_98(int n)
 {
+	int increment = (n <= 98) ? 1 : -1;
+
 	while (n != 98)
 	{
-		if (n < 98)
+		int abs_n = (n < 0) ? -n : n;
+		int divisor = 1;
+
+		while (divisor <= 1000)
 		{
-			if (n >= 10 && n <= 99 || (n * -1) >= 10 && (n * -1) <=99)
+			int digit = (abs_n / divisor) % 10;
+
+			if (digit != 0 || divisor == 1)
 			{
 				if (n < 0)
-				{
 					_putchar('-');
-				}
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
+				_putchar(digit + '0');
 			}
-
-			else if ((n * -1) >= 100 && (n * -1) <= 999)
-			{
-				_putchar('-');
-				_putchar(((n * -1) / 100) + '0');
-				_putchar((((n * -1) / 10) % 10) + '0');
-				_putchar(((n * -1) % 10) + '0');
-			}
-			else if (n < 0 && (n * -1) < 9)
-			{
-				_putchar('-');
-				_putchar((n * -1) + '0');
-			}
-			else
-			{
-				_putchar(n + '0');
-			}
-			_putchar(',');
-			_putchar(' ');
-			n++;
+			divisor *= 10;
 		}
-		else
-		{
-			if (n >= 10 && n <= 99)
-			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-			}
-			else if (n >= 100 && n <= 999)
-			{
-				_putchar((n / 100) + '0');
-				_putchar(((n / 10) % 10) + '0');
-				_putchar((n % 10) + '0');
-			}
-			else
-			{
-				_putchar(n + '0');
-			}
-				_putchar(',');
-				_putchar(' ');
-				n--;
-		}
+		_putchar(',');
+		_putchar(' ');
+		n += increment;
 	}
 	_putchar('9');
 	_putchar('8');
 	_putchar('\n');
 }
+
