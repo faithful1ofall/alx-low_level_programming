@@ -11,10 +11,27 @@ void print_to_98(int n)
 	{
 		if (n < 98)
 		{
-			if (n >= 10)
+			if (n >= 10 && n <= 99 || (n * -1) >= 10 && (n * -1) <=99)
 			{
+				if (n < 0)
+				{
+					_putchar('-');
+				}
 				_putchar((n / 10) + '0');
 				_putchar((n % 10) + '0');
+			}
+
+			else if ((n * -1) >= 100 && (n * -1) <= 999)
+			{
+				_putchar('-');
+				_putchar(((n * -1) / 100) + '0');
+				_putchar((((n * -1) / 10) % 10) + '0');
+				_putchar(((n * -1) % 10) + '0');
+			}
+			else if (n < 0 && (n * -1) < 9)
+			{
+				_putchar('-');
+				_putchar((n * -1) + '0');
 			}
 			else
 			{
@@ -26,11 +43,16 @@ void print_to_98(int n)
 		}
 		else
 		{
-			if ((n * -1) >= 10)
+			if (n >= 10 && n <= 99)
 			{
-				_putchar('-');
-				_putchar(((n * -1) / 10) + '0');
-				_putchar(((n * -1) % 10) + '0');
+				_putchar((n / 10) + '0');
+				_putchar((n % 10) + '0');
+			}
+			else if (n >= 100 && n <= 999)
+			{
+				_putchar((n / 100) + '0');
+				_putchar(((n / 10) % 10) + '0');
+				_putchar((n % 10) + '0');
 			}
 			else
 			{
