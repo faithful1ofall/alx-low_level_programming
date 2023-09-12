@@ -8,24 +8,21 @@
  */
 int main(void)
 {
-	int count, i = 0;
-	unsigned long fib[100];
-	fib[0] = 1;
-	fib[1] = 2;
-	count = 2;
+    unsigned long fib1 = 1;
+    unsigned long fib2 = 2;
 
-	while (count < 98)
-	{
-		fib[count] = fib[count - 1] + fib[count - 2];
-		count++;
-	}
-	while (i < 98)
-	{
-		printf("%lu", fib[i]);
-		if (i < 97)
-			printf(", ");
-		i++;
+    printf("%lu, %lu", fib1, fib2);
+
+    for (int i = 2; i < 98; i++)
+    {
+        unsigned long fib_next = fib1 + fib2;
+
+        printf(", %lu", fib_next);
+
+        fib1 = fib2;
+        fib2 = fib_next;
     }
+
     printf("\n");
     return (0);
 }
