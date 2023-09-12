@@ -8,10 +8,10 @@
  */
 int main(void)
 {
-	int count;
+	int count = 0;
 	unsigned long fib1 = 0, fib2 = 1, sum;
 
-	for (count = 0; count < 50; count++)
+	while (count < 50)
 	{
 		sum = fib1 + fib2;
 		printf("%lu", sum);
@@ -23,6 +23,7 @@ int main(void)
 			printf("\n");
 		else
 			printf(", ");
+		count++;
 	}
 
 	return (0);
