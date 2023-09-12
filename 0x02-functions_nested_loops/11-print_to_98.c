@@ -1,3 +1,5 @@
+#include <unistd.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -7,31 +9,33 @@
  */
 void print_to_98(int n)
 {
-	int increment = (n <= 98) ? 1 : -1;
+	char buffer[16];
+	int length;
 
-	while (n != 98)
+	if (n <= 98)
 	{
-		int abs_n = (n < 0) ? -n : n;
-		int divisor = 1;
-
-		while (divisor <= 1000)
+		while (n <= 98)
 		{
-			int digit = (abs_n / divisor) % 10;
-
-			if (digit != 0 || divisor == 1)
-			{
-				if (n < 0)
-					_putchar('-');
-				_putchar(digit + '0');
-			}
-			divisor *= 10;
+			length = sprintf(buffer, "%d", n);
+			write(1, buffer, length);
+			if (n != 98)
+				write(1, ", ", 2);
+			else
+				write(1, "\n", 1);
+			n++;
 		}
-		_putchar(',');
-		_putchar(' ');
-		n += increment;
 	}
-	_putchar('9');
-	_putchar('8');
-	_putchar('\n');
+	else if (n >= 98)
+	{
+		while (n >= 98)
+		{
+			length = sprintf(buffer, "%d", n);
+			write(1, buffer, length);
+			if (n != 98)
+				write(1, ", ", 2);
+			else
+				write(1, "\n", 1);
+			n--;
+		}
+	}
 }
-
