@@ -6,11 +6,11 @@
  */
 void rev_string(char *s)
 {
-	char *a;
+	char amp;
 	int len, len1;
 
 	len = 0;
-	a = s[len];
+	amp = s[len];
 
 	while (s[len] != '\0')
 	{
@@ -21,7 +21,7 @@ void rev_string(char *s)
 
 	while (len1 >= 0)
 	{
-		a = s[len1--];
+		amp = s[len1--];
 		len1--;
 	}
 }
