@@ -16,11 +16,12 @@ void rev_string(char *s)
 
 	end = len - 1;
 
-	while (sta < len / 2)
+	while (sta < end)
 	{
 		amp = s[sta];
 		s[sta] = s[end];
-		s[end--] = amp;
+		s[end] = amp;
 		sta++;
+		end--;
 	}
 }
