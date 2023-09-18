@@ -7,7 +7,7 @@
 void rev_string(char *s)
 {
 	char amp;
-	int len, len1;
+	int len, len1, end;
 
 	while (s[len] != '\0')
 	{
@@ -15,11 +15,14 @@ void rev_string(char *s)
 	}
 
 	len1 = len - 1;
+	end = 0;
 
-	while (len1 >= 0)
+	while (len1 >= end)
 	{
-		amp = s[0];
-		s[len1--] = amp;
+		amp = s[end];
+		s[end] = s[len1];
+		s[len1] = amp;
+		end++;
 		len1--;
 	}
 }
