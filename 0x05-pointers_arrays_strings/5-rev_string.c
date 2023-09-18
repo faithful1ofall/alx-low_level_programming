@@ -17,10 +17,11 @@ void rev_string(char *s)
 	}
 
 	len1 = len - 1;
+	
+	a = '';
 
 	while (len1 >= 0)
 	{
-		a = ''
 		a = s[len1--];
 		len1--;
 	}
