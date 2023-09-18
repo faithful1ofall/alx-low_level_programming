@@ -7,20 +7,13 @@
 void rev_string(char *s)
 {
 	char amp;
-	int len, len1;
-
-	len = 0;
-
-	while (s[len] != '\0')
-	{
-		len++;
-	}
+	int len = _strlen(s), len1;
 
 	len1 = len - 1;
 
 	while (len1 >= 0)
 	{
-		amp = s[len];
+		amp = s[0];
 		s[len1--] = amp;
 		len1--;
 	}
