@@ -21,7 +21,7 @@ void print_rev(char *s)
 	{
 
 		_putchar(s[maxlen]);
-    maxlen--
+		maxlen--;
 	}
 
 	_putchar('\n');
