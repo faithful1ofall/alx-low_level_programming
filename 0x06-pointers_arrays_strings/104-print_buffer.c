@@ -20,15 +20,15 @@ void print_line(char *c, int s, int l)
     else
       printf("  ");
     if (j % 2)
-      _putchar(' ');
+      putchar(' ');
     j++;
   }
   while (k <= s)
   {
     if (c[l * 10 + k] > 31 && c[l * 10 + k] < 127)
-      _putchar(c[l * 10 + k]);
+      putchar(c[l * 10 + k]);
     else
-      _putchar('.');
+      putchar('.');
     k++;
   }
 }
@@ -51,9 +51,9 @@ void print_buffer(char *b, int size)
       print_line(b, 9, i);
     else
       print_line(b, size % 10 - 1, i);
-    _putchar('\n');
+    putchar('\n');
     i++;
   }
   if (size == 0)
-    _putchar('\n');
+    putchar('\n');
 }
