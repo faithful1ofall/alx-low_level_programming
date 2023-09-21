@@ -15,7 +15,7 @@ char *leet(char *s)
 
 	while (s[i] != '\0')
 	{
-    j = 0;
+		j = 0;
     
 		while (j < 10)
 		{
@@ -23,9 +23,9 @@ char *leet(char *s)
 			{
 				s[i] = b[j];
 			}
-      j++;
+			j++;
 		}
-    i++;
+		i++;
 	}
 
 	return (s);
