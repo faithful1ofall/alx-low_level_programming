@@ -8,7 +8,7 @@
  */
 char *cap_string(char *s)
 {
-	int i = 0, j = 0;
+	int i = 0, j;
 
 	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
 		'!', '?', '"', '(', ')', '{', '}'};
@@ -17,6 +17,7 @@ char *cap_string(char *s)
 	{
 		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
 			s[i] -= 32;
+		j = 0;
 
 		while (j < 13)
 		{
@@ -27,9 +28,9 @@ char *cap_string(char *s)
 					s[i + 1] -= 32;
 				}
 			}
-      j++;
+			j++;
 		}
-    i++;
+		i++;
 	}
 
 	return (s);
