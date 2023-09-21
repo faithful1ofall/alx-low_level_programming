@@ -15,7 +15,7 @@ char *rot13(char *s)
 
 	while (s[i] != '\0')
 	{
-    j = 0;
+		j = 0;
 
 		while (a[j] != '\0')
 		{
@@ -24,10 +24,9 @@ char *rot13(char *s)
 				s[i] = b[j];
 				break;
 			}
-      j++;
+			j++;
 		}
-    i++;
+		i++;
 	}
-
 	return (s);
 }
