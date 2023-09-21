@@ -17,7 +17,7 @@ char *leet(char *s)
 	{
 		j = 0;
     
-		while (j < 10)
+		while (j <= 9)
 		{
 			if (s[i] == a[j])
 			{
@@ -27,6 +27,5 @@ char *leet(char *s)
 		}
 		i++;
 	}
-
 	return (s);
 }
