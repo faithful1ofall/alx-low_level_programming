@@ -10,7 +10,7 @@
  */
 int _palprecheck(char *s, int start, int end)
 {
-	if (s[start] != s[end])
+	if (s[start] != s[end - 1])
 		return (0);
 	if (start >= end)
 		return (1);
