@@ -10,11 +10,11 @@
  */
 int _palprecheck(char *s, int start, int end)
 {
-	if (s[start] != s[end])
+	if (s[start] != s[end - 1])
 		return (0);
 	if (start >= end)
 		return (1);
-	return (_palprecheck(s, start + 1, end));
+	return (_palprecheck(s, start + 1, end - 1));
 }
 
 /**
@@ -26,10 +26,10 @@ int _palprecheck(char *s, int start, int end)
 int is_palindrome(char *s)
 {
 	int len = _strlen_recursion(s);
-  
+
 	if (len <= 1)
 		return (1);
-	return (_palprecheck(s, 0, len - 1));
+	return (_palprecheck(s, 0, len));
 }
 
 /**
