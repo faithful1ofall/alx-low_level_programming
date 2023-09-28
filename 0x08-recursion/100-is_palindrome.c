@@ -8,6 +8,7 @@
  *
  * Return: 1 if palindrome, 0 if not
  */
+
 int _palprecheck(char *s, int start, int end)
 {
 	if (s[start] != s[end - 1])
@@ -23,6 +24,7 @@ int _palprecheck(char *s, int start, int end)
  *
  * Return: 1 if it is, 0 it's not
  */
+
 int is_palindrome(char *s)
 {
 	int len = _strlen_recursion(s);
@@ -37,6 +39,7 @@ int is_palindrome(char *s)
  * @s: string
  * Return: length
 */
+
 int _strlen_recursion(char *s)
 {
 	if (*s != 0)
