@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _fincsqrt - a wrapper that does the recursion bit
+ * _findsqrt - a wrapper that does the recursion bit
  * @n : input number
  * @sqr: maximum number to sqr
  * Return: square root of @n or -1
@@ -9,8 +9,7 @@
 
 int _findsqrt(int n, int sqr)
 {
-	int sqrd;
-	sqrd = sqr * sqr;
+	int sqrd = sqr * sqr;
 
 	if (sqrd == n)
 		return (sqr);
