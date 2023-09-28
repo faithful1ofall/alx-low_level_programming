@@ -25,9 +25,9 @@ int _palprecheck(char *s, int start, int end)
  */
 int is_palindrome(char *s)
 {
-  int len = _strlen_recursion(s);
+	int len = _strlen_recursion(s);
   
-	if (*s == 0)
+	if (len <= 1)
 		return (1);
 	return (_palprecheck(s, 0, len));
 }
