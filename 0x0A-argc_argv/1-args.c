@@ -8,7 +8,7 @@
  * Return: 0 is a successful program
  */
 
-int main(int argc, char *arg[] __attribute__((unused)))
+int main(int argc, char *argv[] __attribute__((unused)))
 {
 	printf("%i\n", argc - 1);
 	return (0);
