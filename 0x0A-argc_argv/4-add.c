@@ -6,6 +6,7 @@
  * @s: string to be converted
  * Return: the int converted from the string
  */
+
 int _atoi(char *s)
 {
 	int i = 0, d = 0, n = 0, len = 0, f = 0, digit;
@@ -48,10 +49,11 @@ int _atoi(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0, num, i = 0, j = 0, k = 0;
+	int sum = 0, num, i = 0, j, k = 0;
 
 	while (i < argc)
 	{
+		j = 0
 		while (argv[i][j] != 0)
 		{
 			if (argv[i][j] > '9' || argv[i][j] < '0')
@@ -59,9 +61,9 @@ int main(int argc, char *argv[])
 				printf("Error");
 				return (1);
 			}
-      j++;
+			j++;
 		}
-    i++;
+		i++;
 	}
 
 	while (k < argc)
@@ -71,7 +73,7 @@ int main(int argc, char *argv[])
 		{
 			sum += num;
 		}
-    k++;
+		k++;
 	}
 
 	printf("%i\n", sum);
