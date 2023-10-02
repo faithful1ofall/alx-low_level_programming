@@ -45,7 +45,7 @@ int _atoi(char *s)
  * main - adds two positive number
  * @argc: number of arguments
  * @argv: array of arguents
- * Return: 0 means Successful, or 1 means successful 
+ * Return: 0 means Successful, or 1 means successful
  */
 int main(int argc, char *argv[])
 {
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 
 	while (i < argc)
 	{
-		j = 0
+		j = 0;
 		while (argv[i][j] != 0)
 		{
 			if (argv[i][j] > '9' || argv[i][j] < '0')
