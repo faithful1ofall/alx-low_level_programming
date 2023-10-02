@@ -35,17 +35,23 @@ for file in "$@"; do
   # Use the find command to locate the file with the ".c" extension within the initial search directory
   found_files=$(find "$initial_search_directory" -type f -name "$file_with_c_extension")
 
-   
-  # Check if any matching files were found
+# Check if any matching files were found
   if [ -n "$found_files" ]; then
+    first_file_copied=false
     for found_file in $found_files; do
-      # Generate a unique filename by appending a timestamp
-      unique_filename="$(basename -- "$found_file")_$(date +"%Y%m%d%H%M%S").c"
+      # Generate the destination filename based on whether it's the first file or a duplicate
+      if [ "$first_file_copied" = false ]; then
+        destination_filename="$file_with_c_extension"
+        first_file_copied=true
+      else
+        destination_filename="$file_with_c_extension$count"
+        ((count++))
+      fi
       
-      # Copy the file with the new extension ".c" and the unique filename to the destination directory
-      cp "$found_file" "$destination_directory/$unique_filename"
+      # Copy the file with the new extension ".c" and the generated destination filename to the destination directory
+      cp "$found_file" "$destination_directory/$destination_filename"
       
-      echo "Copied $found_file to $destination_directory/$unique_filename"
+      echo "Copied $found_file to $destination_directory/$destination_filename"
     done
   else
     echo "File $file_with_c_extension not found in $initial_search_directory."
