@@ -77,6 +77,6 @@ int main(int argc, char *argv[])
 		k++;
 	}
 
-	printf("%lu\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
