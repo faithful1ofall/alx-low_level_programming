@@ -29,11 +29,18 @@ for file in "$@"; do
   # Use the find command to locate the file with the ".c" extension within the initial search directory
   found_file=$(find "$initial_search_directory" -type f -name "$file_with_c_extension")
 
-  if [ -n "$found_file" ]; then
-    # Copy the file with the new extension ".c" to the destination directory
-    sudo cp -r "${found_file}" "${destination_directory}"
-    
-    echo "Copied $found_file to $destination_directory"
+   
+  # Check if any matching files were found
+  if [ -n "$found_files" ]; then
+    for found_file in $found_files; do
+      # Generate a unique filename by appending a timestamp
+      unique_filename="$(basename -- "$found_file")_$(date +"%Y%m%d%H%M%S").c"
+      
+      # Copy the file with the new extension ".c" and the unique filename to the destination directory
+      cp "$found_file" "$destination_directory/$unique_filename"
+      
+      echo "Copied $found_file to $destination_directory/$unique_filename"
+    done
   else
     echo "File $file_with_c_extension not found in $initial_search_directory."
   fi
