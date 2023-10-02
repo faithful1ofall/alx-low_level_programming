@@ -33,7 +33,7 @@ for file in "$@"; do
   file_with_c_extension="${file%.o}.c"
   
   # Use the find command to locate the file with the ".c" extension within the initial search directory
-  found_file=$(find "$initial_search_directory" -type f -name "$file_with_c_extension")
+  found_files=$(find "$initial_search_directory" -type f -name "$file_with_c_extension")
 
    
   # Check if any matching files were found
