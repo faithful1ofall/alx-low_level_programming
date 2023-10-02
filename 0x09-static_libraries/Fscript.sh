@@ -1,14 +1,22 @@
 #!/bin/bash
 
-# Check if the destination directory and initial search directory are provided as arguments
+# Check if the initial search directory and destination directory are provided as arguments
 if [ $# -lt 3 ]; then
   echo "Usage: $0 initial_search_directory destination_directory file1 file2 file3 ..."
   exit 1
 fi
 
-# Extract the initial search directory and destination directory from the first and second arguments
+# Extract the initial search directory from the first argument
 initial_search_directory="$1"
-destination_directory="$2"
+
+# Extract the destination directory from the second argument and handle . and .. arguments
+if [ "$2" = "." ]; then
+  destination_directory=$(pwd)
+elif [ "$2" = ".." ]; then
+  destination_directory=$(dirname "$(pwd)")
+else
+  destination_directory="$2"
+fi
 
 # Shift the arguments to leave only the filenames
 shift 2
