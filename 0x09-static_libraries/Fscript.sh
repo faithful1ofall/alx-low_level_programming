@@ -8,6 +8,12 @@ fi
 
 # Extract the initial search directory from the first argument
 initial_search_directory="$1"
+# Handle . and .. arguments for current and parent directories
+if [ "$initial_search_directory" = "." ]; then
+  initial_search_directory=$(pwd)
+elif [ "$initial_search_directory" = ".." ]; then
+  initial_search_directory=$(dirname "$(pwd)")
+fi
 
 # Extract the destination directory from the second argument and handle . and .. arguments
 if [ "$2" = "." ]; then
