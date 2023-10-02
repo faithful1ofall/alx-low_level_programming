@@ -7,6 +7,7 @@
  * @argv: array of arguments
  * Return: 0 means a successful message 
  */
+
 int main(int argc, char *argv[])
 {
 	int i = 0;
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
 	while (i < argc)
 	{
 		printf("%s\n", argv[i]);
-    i++;
+		i++;
 	}
 
 	return (0);
