@@ -23,15 +23,18 @@ shift 2
 
 # Loop through the remaining arguments (filenames)
 for file in "$@"; do
-  # Use the find command to locate the file within the initial search directory
-  found_file=$(find "$initial_search_directory" -type f -name "${file%.o}.c")
+  # Change the file extension from ".o" to ".c"
+  file_with_c_extension="${file%.o}.c"
+  
+  # Use the find command to locate the file with the ".c" extension within the initial search directory
+  found_file=$(find "$initial_search_directory" -type f -name "$file_with_c_extension")
 
   if [ -n "$found_file" ]; then
-    # Copy the file with the new extension to the destination directory
+    # Copy the file with the new extension ".c" to the destination directory
     cp "$found_file" "$destination_directory"
     
     echo "Copied $found_file to $destination_directory"
   else
-    echo "File with extension .c not found for $file in $initial_search_directory."
+    echo "File $file_with_c_extension not found in $initial_search_directory."
   fi
 done
