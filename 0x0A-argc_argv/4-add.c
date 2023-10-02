@@ -49,7 +49,7 @@ int _atoi(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0, num, i = 0, j, k;
+	int sum = 0, num, i = 1, j, k;
 
 	while (i < argc)
 	{
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 		}
 		i++;
 	}
-	k = 0;
+	k = 1;
 
 	while (k < argc)
 	{
