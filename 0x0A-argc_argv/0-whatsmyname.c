@@ -4,6 +4,7 @@
 /**
  * main - prints the name of the program
  * @argv: array of arguments
+ * @argc: number of arguments not used
  * Return: 0 means the program is a Success
  */
 
