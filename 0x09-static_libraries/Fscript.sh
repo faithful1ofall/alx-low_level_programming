@@ -31,7 +31,7 @@ for file in "$@"; do
 
   if [ -n "$found_file" ]; then
     # Copy the file with the new extension ".c" to the destination directory
-    cp "$found_file" "$destination_directory"
+    cp -r "$found_file" "$destination_directory"
     
     echo "Copied $found_file to $destination_directory"
   else
