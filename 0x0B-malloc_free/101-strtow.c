@@ -49,7 +49,7 @@ char **strtow(char *str)
 	i = 0;
 	while (i <= len)
 	{
-		if (str[i] == ' ' || str[i] == 0)
+		if (str[i] == ' ' || str[i] == '\0')
 		{
 			if (c)
 			{
