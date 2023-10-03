@@ -20,11 +20,11 @@ char *_strdup(char *str)
 	while (str[len])
 		len++;
 
-	if (dup == NULL)
+	if (d == NULL)
 		return (NULL);
 
-	while ((dup[i] = str[i]) != 0)
+	while ((d[i] = str[i]) != 0)
 		i++;
 
-	return (dup);
+	return (d);
 }
