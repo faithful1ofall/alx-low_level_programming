@@ -32,7 +32,7 @@ int **alloc_grid(int width, int height)
 
 			while (j <= i)
         {
-				free(arr[j]);
+				free(a[j]);
 		j++;
         }
 			return (NULL);
@@ -44,7 +44,7 @@ int **alloc_grid(int width, int height)
 	while (i < height)
 	{
 		j = 0;
-		while (j < widt)
+		while (j < width)
 		{
 			a[i][j] = 0;
 			j++;
