@@ -6,6 +6,7 @@
  * @s: string to evaluate
  * Return: number of words
  */
+
 int count_word(char *s)
 {
 	int flag = 0, c = 0, w = 0;
@@ -19,7 +20,7 @@ int count_word(char *s)
 			flag = 1;
 			w++;
 		}
-    c++;
+		c++;
 	}
 	return (w);
 }
@@ -63,7 +64,7 @@ char **strtow(char *str)
 				k++;
 				c = 0;
 			}
-      i++;
+			i++;
 		}
 		else if (c++ == 0)
 			start = i;
