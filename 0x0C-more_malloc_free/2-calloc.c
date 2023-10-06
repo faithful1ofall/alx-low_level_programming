@@ -27,10 +27,11 @@ char *_memset(char *s, char b, unsigned int n)
  * @size: size of each element
  * Return: pointer to allocated memory
  */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *f;
-  int a = size * nmemb;
+	int a = size * nmemb;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
