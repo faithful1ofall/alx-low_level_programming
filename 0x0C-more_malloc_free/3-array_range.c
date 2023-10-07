@@ -24,10 +24,9 @@ int *array_range(int min, int max)
 		return (NULL);
 
 	while (min <= max)
-    {
+	{
 		f[i] = min++;
-      i++;
-    }
-
+		i++;
+	}
 	return (f);
 }
