@@ -6,16 +6,16 @@
  * @ptr: pointer to the memory previsouly allocated by malloc
  * @old_size: size of the allocated memory for ptr
  * @new_size: new size of the new memory block
- *
  * Return: pointer to the newly allocated memory block
  */
+
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *f;
 	char *of;
 	unsigned int i = 0;
 
-	if (new_size == old_size)
+	if (old_size == new_size)
 		return (ptr);
 
 	if (ptr && new_size == 0)
@@ -36,17 +36,20 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size < old_size)
 	{
 		while (i < new_size)
+		{
 			f[i] = of[i];
-    i++;
+			i++;
+		}
 	}
 
-	if (new_size > old_size)
+	if (old_size < new_size)
 	{
-    i = 0;
-
+		i = 0;
 		while (i < old_size)
+		{
 			f[i] = of[i];
-    i++;
+			i++;
+		}
 	}
 
 	free(ptr);
