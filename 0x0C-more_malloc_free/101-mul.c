@@ -16,7 +16,7 @@ int is_digit(char *s)
 	{
 		if (s[i] < '0' || s[i] > '9')
 			return (0);
-    i++;
+		i++;
 	}
 	return (1);
 }
@@ -68,9 +68,8 @@ int main(int argc, char *argv[])
 	if (result == NULL)
 		return (1);
 	while (i <= len1 + len2)
-    result[i] = 0, i++;
-  
-  len1 = len1 - 1;
+		result[i] = 0, i++;
+	len1 = len1 - 1;
 	while (len1 >= 0)
 	{
 		digit1 = s1[len1] - '0', carry = 0, len2 = _strlen(s2) - 1;
@@ -81,18 +80,18 @@ int main(int argc, char *argv[])
 		}
 		if (carry > 0)
 			result[len1 + len2 + 1] += carry;
-    len1--;
+		len1--;
 	}
-  i = 0;
+	i = 0;
 	while (i < len - 1)
 	{
 		if (result[i])
 			a = 1;
 		if (a)
 			_putchar(result[i] + '0');
-    i++;
+		i++;
 	}
-	if (a == NULL)
+	if (!a)
 		_putchar('0');
 	_putchar('\n');
 	free(result);
