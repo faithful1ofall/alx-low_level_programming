@@ -32,11 +32,11 @@ int main(int argc, char *argv[])
 	{
 		if (i == byte - 1)
 		{
-			printf("%02hhx\n", arr[i]);
+			printf("%02hhx\n", a[i]);
 			break;
 		}
-		printf("%02hhx ", arr[i]);
-    i++;
+		printf("%02hhx ", a[i]);
+		i++;
 	}
 	return (0);
 }
