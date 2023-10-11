@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(98);
 	}
 
 	a1 = atoi(argv[1]), fu = get_op_func(argv[2]), a2 = atoi(argv[3]);
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	if (!fu)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 
 	out = *argv[2];
