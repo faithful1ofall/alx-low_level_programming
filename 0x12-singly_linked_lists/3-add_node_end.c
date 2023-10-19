@@ -11,7 +11,7 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *few;
 	list_t *ftmp = *head;
-	unsigned int flen = 0;
+	size_t flen = 0;
 
 	while (str[flen])
 		flen++;
@@ -20,9 +20,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (few == NULL)
 		return (NULL);
 
-	few->str = strdup(str);
-	few->len = flen;
-	few->next = NULL;
+	(*few).str = strdup(str);
+	(*few).len = flen;
+	(*few).next = NULL;
 
 	if (*head == NULL)
 	{
@@ -31,9 +31,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 
 	while (ftmp->next)
-		ftmp = ftmp->next;
+		ftmp = (*ftmp).next;
 
-	ftmp->next = few;
+	(*ftmp).next = few;
 
 	return (few);
 }
