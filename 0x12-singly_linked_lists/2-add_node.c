@@ -18,9 +18,9 @@ list_t *add_node(list_t **head, const char *str)
 	if (few == NULL)
 		return (NULL);
 
-	few->str = strdup(str);
-	few->len = flen;
-	few->next = (*head);
+	(*few).str = strdup(str);
+	(*few).len = flen;
+	(*few).next = (*head);
 	(*head) = few;
 
 	return (*head);
