@@ -1,18 +1,13 @@
+global main
+extern printf
+
 section .data
-    hello db 'Hello, Holberton', 10 ; The string to print with a newline character
+format db 'Hello, Holberton\n', 0 ; The format string for printf
 
 section .text
-    global _start
-
-_start:
-    ; Write "Hello, Holberton" to stdout (file descriptor 1)
-    mov rax, 1        ; sys_write syscall number
-    mov rdi, 1        ; file descriptor 1 (stdout)
-    mov rsi, hello    ; pointer to the string
-    mov rdx, 15       ; string length
-    syscall
-
-    ; Exit the program
-    mov rax, 60       ; sys_exit syscall number
-    xor rdi, rdi      ; exit code 0
-    syscall
+main:
+    mov edi, format   ; Load the address of the format string
+    xor eax, eax      ; Clear EAX register (indicating no additional floating-point registers used)
+    call printf       ; Call the printf function
+    mov eax, 0        ; Set the return value to 0 (return code)
+    ret
