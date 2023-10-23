@@ -16,9 +16,9 @@ listint_t *find_listint_loop(listint_t *head)
 
 	while (slo && fas && (*fas).next)
 	{
-		fas = (*fas).(*next).next;
+		fas = (*(*fas).next).next;
 		slo = (*slo).next;
-		if (fast == slow)
+		if (fas == slo)
 		{
 			slo = head;
 			while (slo != fas)
