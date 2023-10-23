@@ -29,8 +29,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = ne;
 		return (ne);
 	}
-  i = 0;
-
+	i = 0;
 	while (te && i < idx)
 	{
 		if (i == idx - 1)
@@ -41,8 +40,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		}
 		else
 			te = (*te).next;
-    i++;
+		i++;
 	}
-
 	return (NULL);
 }
