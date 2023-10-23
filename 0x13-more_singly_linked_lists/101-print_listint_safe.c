@@ -1,5 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <stdio.h>
+
 /**
  * print_listint_safe - function that prints a linked list with a loop safely.
  * @head: pointer to the 1st node of the linked list
