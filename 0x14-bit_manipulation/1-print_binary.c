@@ -16,7 +16,7 @@ void print_binary(unsigned long int n)
 			shi++;
 		while (shi >= 0)
 		{
-			if ((n >> shifts) & 1)
+			if ((n >> shi) & 1)
 				printf("1");
 			else
 				printf("0");
