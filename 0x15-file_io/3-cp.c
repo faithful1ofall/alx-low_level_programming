@@ -20,7 +20,7 @@ char *create_buffer(char *file)
 		exit(99);
 	}
 
-	return (!fbuf);
+	return (fbuf);
 }
 
 /**
@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 		fr = read(ffrom, fbuf, 1024);
 		fto = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (r > 0);
+	} while (fr > 0);
 
 	free(fbuf);
 	close_file(ffrom);
