@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 {
 	int ffrom, fto, fr, fw;
 	char *fbuf;
-	mode_t file_perm;
+	mode_t file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -66,7 +66,6 @@ int main(int argc, char *argv[])
 	fbuf = create_buffer(argv[2]);
 	ffrom = open(argv[1], O_RDONLY);
 	fr = read(ffrom, fbuf, 1024);
-	file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	fto = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, file_perm);
 
 	do {
