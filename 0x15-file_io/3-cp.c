@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	fbuf = create_buffer(argv[2]);
 	ffrom = open(argv[1], O_RDONLY);
 	fr = read(ffrom, fbuf, 1024);
@@ -90,10 +89,8 @@ int main(int argc, char *argv[])
 		fto = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (fr > 0);
-
 	free(fbuf);
 	close_file(ffrom);
 	close_file(fto);
-
 	return (0);
 }
