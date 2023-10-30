@@ -50,7 +50,7 @@ void print_magic(unsigned char *e_id)
 			printf("\n");
 		else
 			printf(" ");
-    ind++;
+		ind++;
 	}
 }
 
@@ -288,16 +288,16 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	check_elf((*head).e_id);
+	check_elf((*head).e_ident‎);
 	printf("ELF Header:\n");
-	print_magic((*head).e_id);
-	print_class((*head).e_id);
-	print_data((*head).e_id);
-	print_version((*head).e_id);
-	print_osabi((*head).e_id);
-	print_abi((*head).e_id);
-	print_type((*head).->e_ty, (*head).e_id);
-	print_entry((*head).e_ent, (*head).e_id);
+	print_magic((*head).e_ident‎);
+	print_class((*head).e_ident‎);
+	print_data((*head).e_ident‎);
+	print_version((*head).e_ident);
+	print_osabi((*head).e_ident);
+	print_abi((*head).e_ident);
+	print_type((*head).e_type, (*head).e_ident);
+	print_entry((*head).e_entry, (*head).e_ident);
 
 	free(head);
 	close_elf(fo);
