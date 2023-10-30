@@ -17,8 +17,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		flen = 0;
-		while (text_content[flen])
+		for (flen = 0; text_content[flen];)
 			flen++;
 	}
 
