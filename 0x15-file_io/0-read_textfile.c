@@ -21,7 +21,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	fo = open(filename, O_RDONLY);
-	fr = read(o, fbuf, letters);
+	fr = read(fo, fbuf, letters);
 	fw = write(STDOUT_FILENO, fbuf, fr);
 
 	if (fo == -1 || fr == -1 || fw == -1 || fw != fr)
