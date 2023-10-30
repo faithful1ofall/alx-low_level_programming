@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 	fbuf = create_buffer(argv[2]);
 	ffrom = open(argv[1], O_RDONLY);
 	fr = read(ffrom, fbuf, 1024);
-	fto = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 664);
+	fto = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 		if (ffrom == -1 || fr == -1)
