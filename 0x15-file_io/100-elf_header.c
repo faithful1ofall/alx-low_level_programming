@@ -26,7 +26,7 @@ void check_elf(unsigned char *e_id)
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
 		}
-    ind++;
+		ind++;
 	}
 }
 
@@ -213,8 +213,8 @@ void print_type(unsigned int e_ty, unsigned char *e_id)
 
 /**
  * print_entry - Prints the entry point of an ELF header.
- * @e_entry: The address of the ELF entry point.
- * @e_ident: A pointer to an array containing the ELF class.
+ * @e_ent: The address of the ELF entry point.
+ * @e_id: A pointer to an array containing the ELF class.
  */
 void print_entry(unsigned long int e_ent, unsigned char *e_id)
 {
