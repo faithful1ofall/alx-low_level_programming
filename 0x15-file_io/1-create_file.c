@@ -10,9 +10,9 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fo, fw, flen;
+	int fo, fw, flen = 0;
 
-	if (filename == NULL)
+	if (!filename)
 		return (-1);
 
 	if (text_content != NULL)
@@ -22,13 +22,12 @@ int create_file(const char *filename, char *text_content)
 			flen++;
 	}
 
-	fo = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	fo = open(filename, O_CREAT | O_RDWR | O_TRUNC, 600);
 	fw = write(fo, text_content, flen);
 
 	if (fo == -1 || fw == -1)
 		return (-1);
 
 	close(fo);
-
 	return (1);
 }
