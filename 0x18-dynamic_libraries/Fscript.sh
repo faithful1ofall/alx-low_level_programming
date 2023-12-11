@@ -30,7 +30,7 @@ shift 2
 # Loop through the remaining arguments (filenames)
 for file in "$@"; do
   # Change the file extension from ".o" to ".c"
-  file_with_c_extension="${file%.o}.c"
+  file_with_c_extension="${file}"
   
   # Use the find command to locate the file with the ".c" extension within the initial search directory
   found_files=$(find "$initial_search_directory" -type f -name "$file_with_c_extension")
